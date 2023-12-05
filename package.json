@@ -1,0 +1,40 @@
+{
+  "name": "@fightingdreamer/iter-reduce",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/iter-reduce.cjs",
+  "module": "./dist/iter-reduce.js",
+  "typings": "./dist/iter-reduce.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/iter-reduce.js",
+      "require": "./dist/iter-reduce.cjs"
+    }
+  },
+  "version": "0.1.0",
+  "description": "Missing reduce over iterable.",
+  "scripts": {
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "build": "vite build",
+    "build:watch": "vite build --watch"
+  },
+  "keywords": [
+    "iter"
+  ],
+  "author": {
+    "name": "Patryk Stępień"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/fightingdreamer/npm-iter-reduce",
+  "devDependencies": {
+    "vite": "^5.0.5",
+    "vite-plugin-dts": "^3.6.4",
+    "vitest": "^0.34.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
