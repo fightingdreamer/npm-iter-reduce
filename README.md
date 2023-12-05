@@ -54,7 +54,7 @@ assert(result == expect)
 
 ## Functions
 
-```ts
+```js
 function reduceWithInitial<T, R>(
   iterator: Iterable<T>,
   callbackFn: (accumulator: R, currentValue: T, currentIndex: number) => R,
@@ -68,7 +68,7 @@ using initialValue as accumulator on first call.
 This function is best suited for merging input into one item, or
 creating collection from input reusing already collected items.
 
-```ts
+```js
 function reduceWithDefault<T>(
   iterator: Iterable<T>,
   callbackFn: (accumulator: T, currentValue: T, currentIndex: number) => T,
