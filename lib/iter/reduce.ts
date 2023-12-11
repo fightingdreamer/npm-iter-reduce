@@ -1,3 +1,7 @@
+/**
+  Reduce over iterator with initial value
+  @returns reduced value
+*/
 export function reduceWithInitial<T, R>(
   iterator: Iterable<T>,
   callbackFn: (accumulator: R, currentValue: T, currentIndex: number) => R,
@@ -12,6 +16,10 @@ export function reduceWithInitial<T, R>(
   return result;
 }
 
+/**
+  Reduce over iterator with default value
+  @returns reduced value
+*/
 export function reduceWithDefault<T>(
   iterator: Iterable<T>,
   callbackFn: (accumulator: T, currentValue: T, currentIndex: number) => T,
