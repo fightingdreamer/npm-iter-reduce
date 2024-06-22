@@ -56,7 +56,7 @@ assert(result == expect)
 
 ```js
 function reduceWithInitial<T, R>(
-  iterator: Iterable<T>,
+  iterable: Iterable<T>,
   callbackFn: (accumulator: R, currentValue: T, currentIndex: number) => R,
   initialValue: R,
 ): R
@@ -69,11 +69,11 @@ This function is best suited for merging input into one item, or
 creating collection from input reusing already collected items.
 
 ```js
-function reduceWithDefault<T>(
-  iterator: Iterable<T>,
-  callbackFn: (accumulator: T, currentValue: T, currentIndex: number) => T,
-  defaultValue: T,
-): T
+function reduceWithDefault<T, D, R>(
+  iterable: Iterable<T>,
+  callbackFn: (accumulator: T | R, currentValue: T, currentIndex: number) => R,
+  defaultValue: D,
+): T | D | R {
 ```
 
 For inputs of length >= 2 will call callbackFn on every item except first one,
