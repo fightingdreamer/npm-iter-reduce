@@ -20,18 +20,18 @@ export function reduceWithInitial<T, R>(
   Reduce over iterator with default value
   @returns reduced value
 */
-export function reduceWithDefault<T, D, R>(
+export function reduceWithDefault<T, D>(
   iterable: Iterable<T>,
-  callbackFn: (accumulator: T | R, currentValue: T, currentIndex: number) => R,
+  callbackFn: (accumulator: T, currentValue: T, currentIndex: number) => T,
   defaultValue: D,
-): T | D | R {
+): T | D {
   const iterator = iterable[Symbol.iterator]();
 
   let iterResult = iterator.next();
   if (iterResult.done) return defaultValue;
 
   let index = 0;
-  let result: T | R = iterResult.value;
+  let result: T = iterResult.value;
   iterResult = iterator.next();
 
   while (!iterResult.done) {
